@@ -10,9 +10,10 @@ While the earlier project focused on **gravitational interaction between bodies*
 ---
 
 ## 🎬 Demo
+Demo is pretty bad quality because of 10mb upload limit
 
 
-https://github.com/user-attachments/assets/1c274010-9fa2-42c8-a1bb-85436be82d04
+https://github.com/user-attachments/assets/eeb18fec-57a6-419c-910c-3cae1cb1fd3c
 
 
 ---
