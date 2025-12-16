@@ -211,5 +211,5 @@ A hands-on exploration of **physics engines**, numerical methods, and interactiv
 ---
 
 ### 🧑‍🚀 Qclipsing — Me
-Yes, I used AI to write this refine my original readme with colorful emojies, higlights and other improvments like grammar. Because I am pretty bad at writing readmes 
+Yes, I used AI to refine my original readme with colorful emojies, higlights and other improvments like grammar. Because I am pretty bad at writing readmes 
 
