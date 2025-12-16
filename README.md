@@ -90,7 +90,20 @@ https://github.com/user-attachments/assets/eeb18fec-57a6-419c-910c-3cae1cb1fd3c
 
 * Gravity varies per planet
 * Drag force follows:
-  
+
+### ⏱️ Time Step (dt) and Frame Dependence
+
+The simulation uses a **fixed time step** of: 0.07
+
+This value is **hard-coded** and was chosen empirically, as it produces the most visually realistic and numerically stable results for this system (especially with drag, collisions, and RK4 integration).
+
+Because the simulation is **not frame-rate independent**, changes in performance will affect the physical outcome:
+* If the frame rate drops, the simulation will effectively slow down
+* Physics behavior may diverge slightly on weaker hardware
+
+This tradeoff was made intentionally to prioritize **stability and realism** over strict real-time accuracy.  
+
+ 
 ```
 
 F_drag = 0.5 * ρ * C_d * A * v²
@@ -141,6 +154,9 @@ All values can be easily tweaked inside the `addOnClick()` function to experimen
 
 ## 🌍 Planetary Environments
 
+A lot of research went into selecting reasonable values for gravitational acceleration and air density for each planet.
+For terrestrial planets, air density values are based on approximate surface (sea-level) conditions.
+Gas giants, however, do not have a true sea level, so their air density values are instead approximated at a depth corresponding to the same relative distance from the planet’s center as Earth’s radius, allowing for a more consistent comparison across bodies.
 Switch planets using number keys:
 
 | Key | Body     | Gravity (m/s² ×10) | Air Density (kg/m³) |
@@ -170,7 +186,9 @@ To make testing quick and painless, use the official **Raylib Quickstart** templ
 3. Replace the template’s `main.cpp` with this project’s `main.cpp`
 4. Build and run — the simulation should start immediately
 
-> ⚠️ Due to local configuration differences, this is currently the most reliable way to run the project
+Or you can download raylib, create new project with it and copy paste main.cpp
+
+> ⚠️ Due to local configuration issues, this is currently the most reliable way to run the project
 
 ---
 
@@ -179,8 +197,8 @@ To make testing quick and painless, use the official **Raylib Quickstart** templ
 This project is a **natural continuation** of my earlier **N-Body Simulation**:
 
 **Similarities**
-* RK4 numerical integration
-* Physics-first architecture
+* RK4 numerical integration (thought slightly different implementation here)
+* Physics-first architecture (physically and mathematically accurate simulations)
 * Raylib-based real-time visualization
 * Interactive object spawning
 * Strong focus on correctness & stability
@@ -191,6 +209,8 @@ This project is a **natural continuation** of my earlier **N-Body Simulation**:
 * Planet-specific atmospheric effects
 * Impulse-based mechanics
 * Surface-level physics instead of orbital dynamics
+* New code structre, each ball as a individual instance of a class "ball" and interaction between balls and other general stuff happens in another class "Balls system"
+* A lot of other minor differences in code and structure 
 
 Together, the two projects form a progression from **astronomical-scale simulations** to **detailed physical systems**.
 
